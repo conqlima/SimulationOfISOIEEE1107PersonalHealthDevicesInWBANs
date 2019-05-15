@@ -1,0 +1,21 @@
+\section{Introduction}
+
+Wireless Sensor Networks (WSNs) can be applied to different scenarios, such as Internet of Things, Smart Cities, Medical Systems, etc. Due to increasing research efforts in WSN and telemedicine areas, a new type of network emerged: Wireless Body Area Networks (WBANs) or Body Area Networks (BANs) \cite{b21}. A WBAN consists of intelligent devices, attached to the skin or implanted in the body, capable of exchanging data over a wireless network \cite{b18}.
+
+The lack of commercial devices and health hazards make real experiments with WBANs rare. Therefore, simulation is an important tool to allow feasible tests with less cost and time. Castalia \cite{b15} is a widely used free and open source simulator for wireless sensor networks and wireless body area networks. 
+
+In Castalia, a body sensor is represented by a node that performs network functions, but the applications available in the simulator are generic, and do not specify the type sensor with its communication requirements. 
+
+In order to represent a more realistic simulation scenario, the use of a real standardized medical application is vital. The ISO/IEEE 11073 standard for Personal Health Devices (X73-PHD) describes data exchange, data representation, and terminology for communication between Personal Health Devices. Thus, this standard can be used as a role model for medical applications in our scenario.
+
+The term PHD involves both medical devices and health/fitness devices used in private homes \cite{b3}. The ISO/IEEE 11073 family of standards is divided into three groups, the first and oldest part is the ISO/IEEE 11073 \textit{Lower Layer}, which specifies protocols and communication service using physical layers such as infrared, wireless RF or Ethernet \cite{b16}. The ISO/IEEE 11073 \textit{Point-of-Care-Devices} (X73-PoC) specifies communication standards for devices that are used exclusively in health facilities. Finally, the X73-PHD, sets standards for personal devices used in private homes.
+%VINICIUS - O que são "lay" users?, R: eu quis dizer usuários leigos mas já retirei essa palavra%
+
+The X73-PHD standard defines two types of devices: Agents and Managers. Agents are typically low power sensors or actuators, with limited processing power, whereas managers are devices with a greater processing power, that could be connected to an energy source.
+
+The goal of this work is to propose the use of X73-PHD standard in e-health network simulations, representing realistic medical applications and investigating the behavior of medical devices (sensors or actuators) in WBAN scenarios. Examples of personal health devices are oximeters, thermometers, ECGs, glucose meters, blood pressure monitors, etc. 
+
+%This paper proposes a free and open-source implementation of Personal Health Devices for  Castalia  Simulator.  
+We  implemented  five  different PHDs   to   act   like   real  X73-PHD   devices   in   WBAN  simulations using the Antidote Library \cite{b20} as a basis.  Our  implementation also   supports   a   confirmed   communication   mode,   where the receiver  sends  an  acknowledgement  to  the  sender  every  time  it receives  a  packet. The 11073 standard was created as an application layer relying on reliable transport layer services. However, in many WSNs and WBAN scenarios, the transport layer is absent. Therefore, the protocol's reliable data transfer mechanism had to be adjusted to the dynamics of a faulty wireless channel, and the lack of transport layer services. Thus, we  propose  an  extension  to  the  standard  that  decreases  the overhead  of  control  packets  over  the  network. 
+
+The rest of the paper is organized as follows: In Section \ref{relatedworks}, we present related works, focusing on X73-PHD works. In Section \ref{systemarch}, an overview of our proposal is given. In Section \ref{castaliaapplayer}, we discuss the parameters available for the user to configure his/her simulation. Results are given in Section \ref{results} and, finally, conclusions in Section \ref{conclusion}.

@@ -1,0 +1,6 @@
+\section{Conclusion}\label{conclusion}
+In this paper, we have presented a proposal to simulate personal health devices in Castalia Simulator. Our application layer follows the X73-PHD standard with the aid of the Antidote Library. Five agents were implemented, and they simulate real personal health devices. In addition, a new reliable data transfer mode was proposed, the retransmission mode, to adjust the X73-PHD protocol to WBAN scenarios, where a reliable transport layer is usually not available. The retransmission mode aimed at reducing the number of disassociation/reassociations that take place after a message or acknowledgement is lost.
+
+As future work, we intend to calculate the \textit{timeOutToRetransmitPacket} dynamically based on the current latency of a packet. Thus, the user does not need to set this values in the simulation file. The codes for Castalia Application and for Antidote Modified Library can be found respectively at \url{https://github.com/conqlima/Antidote} and \url{https://github.com/conqlima/11073PhdApplication}.
+%The results shows the advantages of using the retransmission mode over the standards' confirmed mode, increasing the message delivery ratio and reducing the overhead of the protocol. 
+
